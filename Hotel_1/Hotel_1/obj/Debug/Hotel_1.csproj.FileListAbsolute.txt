@@ -1,0 +1,18 @@
+H:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.pdb
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.csprojResolveAssemblyReference.cache
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.Form1.resources
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.Properties.Resources.resources
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.csproj.GenerateResource.Cache
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
+I:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
+C:\Users\Alumno\Documents\GitHub\Proyecto1\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
+C:\Users\Alumno\Documents\GitHub\Proyecto1\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
+C:\Users\Alumno\Documents\GitHub\Proyecto1\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
+H:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
+H:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
+E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
+E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
+E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
