@@ -16,3 +16,6 @@ H:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\H
 E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
 E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
 E:\ARCHIVOS\HISTORIAL\4°SEMESTRE\Taller de Programación Distribuida\PROYECTO\HOTEL\SistemaHotel\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
