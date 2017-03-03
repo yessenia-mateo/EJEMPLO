@@ -18,7 +18,7 @@ namespace Hotel_1
         private string _apellidoMaternoHuesped;
         private DateTime _fechaNacimientoHuesped;
         private string _procedenciaHuesped;
-        private bool _generoHuesped;
+        private Char _generoHuesped;
 
         //CREACIÓN DEL CONSTRUCTOR:
         public clsHuesped(string parametroDocumentoIdentidadHuesped,
@@ -27,7 +27,8 @@ namespace Hotel_1
                           string parametroApellidoMaternoHuesped,
                           DateTime parametroFechaNacimientoHuesped,
                           string parametroProcedenciaHuesped,
-                          bool parametroGeneroHuesped)
+                          Char parametroGeneroHuesped,
+                           clsRuc parametroRUC )
         {
             DocumentoIdentidadHuesped = parametroDocumentoIdentidadHuesped;
             NombresHuesped = parametroNombresHuesped;
@@ -36,6 +37,25 @@ namespace Hotel_1
             FechaNacimientoHuesped = parametroFechaNacimientoHuesped;
             ProcedenciaHuesped = parametroProcedenciaHuesped;
             GeneroHuesped = parametroGeneroHuesped;
+            RucH = parametroRUC;
+        }
+
+        public clsHuesped(string parametroDocumentoIdentidadHuesped,
+                          string parametroNombresHuesped,
+                          string parametroApellidoPaternoHuesped,
+                          string parametroApellidoMaternoHuesped,
+                          DateTime parametroFechaNacimientoHuesped,
+                          string parametroProcedenciaHuesped,
+                          Char parametroGeneroHuesped)
+        {
+            DocumentoIdentidadHuesped = parametroDocumentoIdentidadHuesped;
+            NombresHuesped = parametroNombresHuesped;
+            ApellidoPaternoHuesped = parametroApellidoPaternoHuesped;
+            ApellidoMaternoHuesped = parametroApellidoMaternoHuesped;
+            FechaNacimientoHuesped = parametroFechaNacimientoHuesped;
+            ProcedenciaHuesped = parametroProcedenciaHuesped;
+            GeneroHuesped = parametroGeneroHuesped;
+            
         }
 
         //CREACIÓN DE PROPIEDADES:
@@ -79,7 +99,7 @@ namespace Hotel_1
             get { return _procedenciaHuesped; }
             set { _procedenciaHuesped = value; }
         }
-        public bool GeneroHuesped
+        public Char GeneroHuesped
         {
             get { return _generoHuesped; }
             set { _generoHuesped = value; }
@@ -88,7 +108,7 @@ namespace Hotel_1
         public void Insertar_Huesped()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=.;DATABASE=Proyecto_Hotel;USER=sa;PWD=continental");
+            conexion = new SqlConnection(mdlVarirablesAplicacion.Cadena);
             SqlCommand comando;
             //No importa el orden
             comando = new SqlCommand("usp_Huesped_Insertar", conexion);
@@ -113,6 +133,33 @@ namespace Hotel_1
             conexion.Open();
             comando.ExecuteReader();
             conexion.Close();
+        }
+
+        public static clsHuesped Buscar_PorNumeroDNI(string parDocumentoIdentidad)
+        {
+            clsHuesped Resultado = null;
+            SqlConnection cn;
+            cn= new SqlConnection(mdlVarirablesAplicacion.Cadena);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_Buscar_PorDNI", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parDNI", parDocumentoIdentidad);
+            SqlDataReader contenedor;
+            cn.Open();
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                Resultado = new clsHuesped(contenedor["docuementoIdentidadHuesped"].ToString(),
+                                            contenedor["nombresHuesped"].ToString(),
+                                            contenedor["apellidoPaterno"].ToString(),
+                                            contenedor["apellidoMaterno"].ToString(),
+                                            Convert.ToDateTime(contenedor["fechaNacimientoHuesped"]),
+                                            contenedor["procedenciaHuesped"].ToString(),
+                                            Convert.ToChar(contenedor["generoHuesped"])
+                                            );
+                                        
+            }
+            cn.Close();
+            return Resultado;
         }
     }
 }

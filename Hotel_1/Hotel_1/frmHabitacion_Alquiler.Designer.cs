@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscarRuc = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnGuardarRuc = new System.Windows.Forms.Button();
             this.btnGuardarCiente = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -69,9 +70,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtNroHabitacion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBusqueda_Habitacion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarRuc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPisoHabitacion)).BeginInit();
@@ -81,7 +81,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscarRuc);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.btnGuardarRuc);
             this.groupBox1.Controls.Add(this.btnGuardarCiente);
             this.groupBox1.Controls.Add(this.txtDireccion);
@@ -114,14 +114,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro Huesped";
             // 
-            // button2
+            // btnBuscarRuc
             // 
-            this.button2.Location = new System.Drawing.Point(352, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 27);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuscarRuc.Location = new System.Drawing.Point(24, 243);
+            this.btnBuscarRuc.Name = "btnBuscarRuc";
+            this.btnBuscarRuc.Size = new System.Drawing.Size(195, 27);
+            this.btnBuscarRuc.TabIndex = 26;
+            this.btnBuscarRuc.Text = "Buscar RUC";
+            this.btnBuscarRuc.UseVisualStyleBackColor = true;
+            this.btnBuscarRuc.Click += new System.EventHandler(this.btnBuscarRuc_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(352, 23);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(74, 27);
+            this.btnBuscarCliente.TabIndex = 24;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // btnGuardarRuc
             // 
@@ -134,12 +144,13 @@
             // 
             // btnGuardarCiente
             // 
-            this.btnGuardarCiente.Location = new System.Drawing.Point(23, 241);
+            this.btnGuardarCiente.Location = new System.Drawing.Point(26, 370);
             this.btnGuardarCiente.Name = "btnGuardarCiente";
             this.btnGuardarCiente.Size = new System.Drawing.Size(195, 27);
             this.btnGuardarCiente.TabIndex = 22;
             this.btnGuardarCiente.Text = "Guardar Cliente";
             this.btnGuardarCiente.UseVisualStyleBackColor = true;
+            this.btnGuardarCiente.Click += new System.EventHandler(this.btnGuardarCiente_Click);
             // 
             // txtDireccion
             // 
@@ -232,6 +243,7 @@
             this.chkbRuc.TabIndex = 12;
             this.chkbRuc.Text = "RUC";
             this.chkbRuc.UseVisualStyleBackColor = true;
+            this.chkbRuc.CheckedChanged += new System.EventHandler(this.chkbRuc_CheckedChanged);
             // 
             // txtLugarProcedencia
             // 
@@ -367,7 +379,7 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtNroHabitacion);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnBusqueda_Habitacion);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(458, 48);
             this.groupBox2.Name = "groupBox2";
@@ -476,14 +488,15 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Nro Habitacion";
             // 
-            // button1
+            // btnBusqueda_Habitacion
             // 
-            this.button1.Location = new System.Drawing.Point(7, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(416, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Busqueda Habitacion";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBusqueda_Habitacion.Location = new System.Drawing.Point(7, 23);
+            this.btnBusqueda_Habitacion.Name = "btnBusqueda_Habitacion";
+            this.btnBusqueda_Habitacion.Size = new System.Drawing.Size(416, 26);
+            this.btnBusqueda_Habitacion.TabIndex = 0;
+            this.btnBusqueda_Habitacion.Text = "Busqueda Habitacion";
+            this.btnBusqueda_Habitacion.UseVisualStyleBackColor = true;
+            this.btnBusqueda_Habitacion.Click += new System.EventHandler(this.btnBusqueda_Habitacion_Click);
             // 
             // label1
             // 
@@ -494,15 +507,6 @@
             this.label1.Size = new System.Drawing.Size(242, 25);
             this.label1.TabIndex = 27;
             this.label1.Text = "REGISTRAR ALQUILER";
-            // 
-            // btnBuscarRuc
-            // 
-            this.btnBuscarRuc.Location = new System.Drawing.Point(26, 370);
-            this.btnBuscarRuc.Name = "btnBuscarRuc";
-            this.btnBuscarRuc.Size = new System.Drawing.Size(195, 27);
-            this.btnBuscarRuc.TabIndex = 26;
-            this.btnBuscarRuc.Text = "Buscar RUC";
-            this.btnBuscarRuc.UseVisualStyleBackColor = true;
             // 
             // frmHabitacion_Alquiler
             // 
@@ -516,6 +520,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmHabitacion_Alquiler";
             this.Text = "frmHabitacion_Alquiler";
+            this.Load += new System.EventHandler(this.frmHabitacion_Alquiler_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -530,7 +535,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Button btnGuardarRuc;
         private System.Windows.Forms.Button btnGuardarCiente;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -570,7 +575,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNroHabitacion;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBusqueda_Habitacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscarRuc;
     }

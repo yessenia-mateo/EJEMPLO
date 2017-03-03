@@ -24,6 +24,16 @@ namespace Hotel_1
             RazonSocial = parametroRazonSocial;
             DireccionRuc = parametroDireccionRuc;
         }
+        public clsRuc(Int32 parametroIdRUC,
+                      string parametroNumeroRuc,
+                      string parametroRazonSocial,
+                      string parametroDireccionRuc)
+        {
+            IdRuc = parametroIdRUC;
+            NumeroRuc = parametroNumeroRuc;
+            RazonSocial = parametroRazonSocial;
+            DireccionRuc = parametroDireccionRuc;
+        }
 
         //CREACIÓN DE PROPIEDADES:
         public Int32 IdRuc
@@ -63,6 +73,31 @@ namespace Hotel_1
             conexion.Open();
             comando.ExecuteReader();
             conexion.Close();
+        }
+
+
+        public static clsRuc Buscar_PorNumeroRUC(string parNroRUC)
+        {
+            clsRuc Resultado = null;
+            SqlConnection cn;
+            cn = new SqlConnection(mdlVarirablesAplicacion.Cadena);
+            SqlCommand cmd = new SqlCommand("usp_RUC_Buscar_PorNroRUC", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parRUC", parNroRUC);
+            SqlDataReader contenedor;
+            cn.Open();
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                Resultado = new clsRuc      (Convert.ToInt32(contenedor["idRuc"]),
+                                             contenedor["numeroRuc"].ToString(),
+                                             contenedor["razonSocial"].ToString(),
+                                             contenedor["direccion"].ToString()
+                                            );
+
+            }
+            cn.Close();
+            return Resultado;
         }
     }
 }

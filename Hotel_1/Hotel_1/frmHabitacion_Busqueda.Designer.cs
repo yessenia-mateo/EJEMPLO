@@ -31,7 +31,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbTipoHabitacion = new System.Windows.Forms.ComboBox();
-            this.rbtTipoHabitacion = new System.Windows.Forms.RadioButton();
+            this.rbtnTipoHabitacion = new System.Windows.Forms.RadioButton();
             this.rtbnNroHabitacion = new System.Windows.Forms.RadioButton();
             this.lstvDatos = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,16 +69,16 @@
             this.cmbTipoHabitacion.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoHabitacion.TabIndex = 19;
             // 
-            // rbtTipoHabitacion
+            // rbtnTipoHabitacion
             // 
-            this.rbtTipoHabitacion.AutoSize = true;
-            this.rbtTipoHabitacion.Location = new System.Drawing.Point(27, 75);
-            this.rbtTipoHabitacion.Name = "rbtTipoHabitacion";
-            this.rbtTipoHabitacion.Size = new System.Drawing.Size(106, 17);
-            this.rbtTipoHabitacion.TabIndex = 18;
-            this.rbtTipoHabitacion.TabStop = true;
-            this.rbtTipoHabitacion.Text = "Tipo Habitaccion";
-            this.rbtTipoHabitacion.UseVisualStyleBackColor = true;
+            this.rbtnTipoHabitacion.AutoSize = true;
+            this.rbtnTipoHabitacion.Location = new System.Drawing.Point(27, 75);
+            this.rbtnTipoHabitacion.Name = "rbtnTipoHabitacion";
+            this.rbtnTipoHabitacion.Size = new System.Drawing.Size(106, 17);
+            this.rbtnTipoHabitacion.TabIndex = 18;
+            this.rbtnTipoHabitacion.TabStop = true;
+            this.rbtnTipoHabitacion.Text = "Tipo Habitaccion";
+            this.rbtnTipoHabitacion.UseVisualStyleBackColor = true;
             // 
             // rtbnNroHabitacion
             // 
@@ -90,6 +90,7 @@
             this.rtbnNroHabitacion.TabStop = true;
             this.rtbnNroHabitacion.Text = "Nro Habitacion";
             this.rtbnNroHabitacion.UseVisualStyleBackColor = true;
+            this.rtbnNroHabitacion.CheckedChanged += new System.EventHandler(this.rtbnNroHabitacion_CheckedChanged);
             // 
             // lstvDatos
             // 
@@ -163,13 +164,14 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbTipoHabitacion);
-            this.Controls.Add(this.rbtTipoHabitacion);
+            this.Controls.Add(this.rbtnTipoHabitacion);
             this.Controls.Add(this.rtbnNroHabitacion);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscarHabitacion);
             this.Name = "frmHabitacion_Busqueda";
             this.Text = "frmHabitacion_Busqueda";
+            this.Load += new System.EventHandler(this.frmHabitacion_Busqueda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +182,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cmbTipoHabitacion;
-        private System.Windows.Forms.RadioButton rbtTipoHabitacion;
+        private System.Windows.Forms.RadioButton rbtnTipoHabitacion;
         private System.Windows.Forms.RadioButton rtbnNroHabitacion;
         private System.Windows.Forms.ListView lstvDatos;
         private System.Windows.Forms.ColumnHeader columnHeader0;

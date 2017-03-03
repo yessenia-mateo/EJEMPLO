@@ -13,6 +13,7 @@ namespace Hotel_1
         //CREACIÓN DE CAMPOS:
         private Int32 _idHabitacion;
         private clsTipoHabitacion _tipoHabitacion;
+        private Int32 _idTipoHabitacion;
         private string _numeroHabitacion;
         private decimal _precioHabitacion;
         private byte _pisoHabitacion;
@@ -26,6 +27,21 @@ namespace Hotel_1
                                  string parametroEstadoHabitacion)
         {
             TipoHabitacion = parametroTipoHabitacion;
+            NumeroHabitacion = parametroNumeroHabitacion;
+            PrecioHabitacion = parametroPrecioHabitacion;
+            PisoHabitacion = parametroPisoHabitacion;
+            EstadoHabitacion = parametroEstadoHabitacion;
+        }
+
+        public clsHabitacion(   Int32 parametroIdHabitacion, 
+                                Int32 parametroTipoHabitacion,
+                                 string parametroNumeroHabitacion,
+                                 decimal parametroPrecioHabitacion,
+                                 byte parametroPisoHabitacion,
+                                 string parametroEstadoHabitacion)
+        {
+            IdHabitacion = parametroIdHabitacion;
+            IdTipoHabitacion = parametroTipoHabitacion;
             NumeroHabitacion = parametroNumeroHabitacion;
             PrecioHabitacion = parametroPrecioHabitacion;
             PisoHabitacion = parametroPisoHabitacion;
@@ -62,6 +78,19 @@ namespace Hotel_1
         {
             get { return _estadoHabitacion; }
             set { _estadoHabitacion = value; }
+        }
+
+        public int IdTipoHabitacion
+        {
+            get
+            {
+                return _idTipoHabitacion;
+            }
+
+            set
+            {
+                _idTipoHabitacion = value;
+            }
         }
 
         //CREACIÓN DEL MÉTODO:
@@ -102,5 +131,32 @@ namespace Hotel_1
             comando.ExecuteNonQuery();
             conexion.Close();
         }
+
+        public static clsHabitacion Buscar_PorNumeroHabitacion(string parNroHabitacion)
+        {
+            clsHabitacion Resultado = null;
+            SqlConnection cn;
+            cn = new SqlConnection(mdlVarirablesAplicacion.Cadena);
+            SqlCommand cmd = new SqlCommand("usp_RUC_Buscar_PorNroRUC", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parRUC", parNroHabitacion);
+            SqlDataReader contenedor;
+            cn.Open();
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                Resultado = new clsHabitacion(Convert.ToInt32(contenedor["idHabitacion"]),
+                                              Convert.ToInt32(contenedor["idTipoHabitacion"]),
+                                              contenedor["numeroHabitacion"].ToString(),
+                                              Convert.ToDecimal(contenedor["precioHabitacion"]),
+                                              contenedor["estadoHabitacion"].ToString()
+                                            );
+
+            }
+            cn.Close();
+            return Resultado;
+        }
+
+
     }
 }
