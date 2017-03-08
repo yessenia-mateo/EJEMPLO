@@ -37,3 +37,15 @@ H:\Hotel_1\Hotel_1\obj\Debug\Hotel_1.csproj.GenerateResource.Cache
 J:\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe.config
 J:\Hotel_1\Hotel_1\obj\Debug\Hotel_1.exe
 J:\Hotel_1\Hotel_1\obj\Debug\Hotel_1.pdb
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\bin\Debug\Hotel_1.exe
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\bin\Debug\Hotel_1.pdb
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.csprojResolveAssemblyReference.cache
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.Form1.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmHabitacion_Alquiler.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmHabitacion_Busqueda.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmHabitacion_Cancelar.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmHabitacion_Registro.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmHabitacion_Reserva.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.frmPanel_Administrador.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.Properties.Resources.resources
+C:\Users\Alumno\Documents\GitHub\EJEMPLO\Hotel_1\Hotel_1\obj\Debug\Hotel_1.csproj.GenerateResource.Cache

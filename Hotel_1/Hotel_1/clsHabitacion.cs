@@ -131,7 +131,7 @@ namespace Hotel_1
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@parametroidTipoH", TipoHabitacion.NombreTipo);
             comando.Parameters.AddWithValue("@parametroNumeroHabitacion", NumeroHabitacion);
-            comando.Parameters.AddWithValue("@@parametroPrecioHabitacion,", PrecioHabitacion);
+            comando.Parameters.AddWithValue("@parametroPrecioHabitacion,", PrecioHabitacion);
             comando.Parameters.AddWithValue("@parametroPisoHabitacion", PisoHabitacion);
             comando.Parameters.AddWithValue("@parametroEstadoHabitacion", EstadoHabitacion);
 
@@ -159,32 +159,7 @@ namespace Hotel_1
             conexion.Close();
         }
 
-        public static clsHabitacion Buscar_PorEstadoHabitacion(string parEstado)
-        {
-            clsHabitacion Resultado = null;
-            SqlConnection cn;
-            cn = new SqlConnection(mdlVarirablesAplicacion.Cadena);
-            SqlCommand cmd = new SqlCommand("usp_Habitacion_Buscar_PorEstado", cn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parEstado", parEstado);
-            SqlDataReader contenedor;
-            cn.Open();
-            contenedor = cmd.ExecuteReader();
-            while (contenedor.Read() == true)
-            {
-                Resultado = new clsHabitacion(Convert.ToInt32(contenedor["idHabitacion"]),
-                                              Convert.ToInt32(contenedor["idTipoHabitacion"]),
-                                              contenedor["numeroHabitacion"].ToString(),
-                                              Convert.ToDecimal(contenedor["precioHabitacion"]),
-                                              Convert.ToByte(contenedor["pisoHabitacion"]),
-                                              contenedor["estadoHabitacion"].ToString(),
-                                              contenedor["nombretipo"].ToString()
-                                            );
-
-            }
-            cn.Close();
-            return Resultado;
-        }
+        
 
 
     }
