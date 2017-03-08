@@ -12,6 +12,7 @@ namespace Hotel_1
 {
     public partial class frmHabitacion_Busqueda : Form
     {
+        clsHabitacion UnObjeto;
         
         private clsHabitacion _HabitacionSeleccionado;
         internal clsHabitacion HabitacionSeleccionado
@@ -66,7 +67,7 @@ namespace Hotel_1
 
         private void rtbnNroHabitacion_CheckedChanged(object sender, EventArgs e)
         {
-            if (rtbnNroHabitacion.Checked==true)
+            if (rbtnNroHabitacion.Checked==true)
             {
                 txtNroHabitacion.Enabled = true;
                 btnBuscarHabitacion.Enabled = true;
@@ -75,6 +76,19 @@ namespace Hotel_1
             else
             {
                 InhabilitarControles();
+            }
+        }
+
+        private void btnBuscarHabitacion_Click(object sender, EventArgs e)
+        {
+            if (rbtnTipoHabitacion.Checked==false || rbtnEstadoHabitacion.Checked==false || rbtnNroHabitacion.Checked==false )
+            {
+                throw new Exception("Escoge una opcion de busqueda");
+            }
+            else 
+            {
+                
+               
             }
         }
     }

@@ -14,6 +14,9 @@ namespace Hotel_1
         private Int32 _idHabitacion;
         private clsTipoHabitacion _tipoHabitacion;
         private Int32 _idTipoHabitacion;
+        private string _Habitacion_Tipo;
+
+       
         private string _numeroHabitacion;
         private decimal _precioHabitacion;
         private byte _pisoHabitacion;
@@ -48,6 +51,30 @@ namespace Hotel_1
             EstadoHabitacion = parametroEstadoHabitacion;
         }
 
+        public clsHabitacion(   Int32 parametroIdHabitacion,
+                                Int32 parametroTipoHabitacion,
+                                 string parametroNumeroHabitacion,
+                                 decimal parametroPrecioHabitacion,
+                                 byte parametroPisoHabitacion,
+                                 string parametroEstadoHabitacion,
+                                string parametroNombreTipoHabitacion)
+        {
+            IdHabitacion = parametroIdHabitacion;
+            IdTipoHabitacion = parametroTipoHabitacion;
+            NumeroHabitacion = parametroNumeroHabitacion;
+            PrecioHabitacion = parametroPrecioHabitacion;
+            PisoHabitacion = parametroPisoHabitacion;
+            EstadoHabitacion = parametroEstadoHabitacion;
+            Habitacion_Tipo = parametroNombreTipoHabitacion;
+
+        }
+
+
+        public string Habitacion_Tipo
+        {
+            get { return _Habitacion_Tipo; }
+            set { _Habitacion_Tipo = value; }
+        }
         //CREACION DE PROPIEDADES:
         public Int32 IdHabitacion
         {
@@ -132,14 +159,14 @@ namespace Hotel_1
             conexion.Close();
         }
 
-        public static clsHabitacion Buscar_PorNumeroHabitacion(string parNroHabitacion)
+        public static clsHabitacion Buscar_PorEstadoHabitacion(string parEstado)
         {
             clsHabitacion Resultado = null;
             SqlConnection cn;
             cn = new SqlConnection(mdlVarirablesAplicacion.Cadena);
-            SqlCommand cmd = new SqlCommand("usp_RUC_Buscar_PorNroRUC", cn);
+            SqlCommand cmd = new SqlCommand("usp_Habitacion_Buscar_PorEstado", cn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parRUC", parNroHabitacion);
+            cmd.Parameters.AddWithValue("@parEstado", parEstado);
             SqlDataReader contenedor;
             cn.Open();
             contenedor = cmd.ExecuteReader();
@@ -149,7 +176,9 @@ namespace Hotel_1
                                               Convert.ToInt32(contenedor["idTipoHabitacion"]),
                                               contenedor["numeroHabitacion"].ToString(),
                                               Convert.ToDecimal(contenedor["precioHabitacion"]),
-                                              contenedor["estadoHabitacion"].ToString()
+                                              Convert.ToByte(contenedor["pisoHabitacion"]),
+                                              contenedor["estadoHabitacion"].ToString(),
+                                              contenedor["nombretipo"].ToString()
                                             );
 
             }

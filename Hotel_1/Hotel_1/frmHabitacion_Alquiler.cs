@@ -32,8 +32,8 @@ namespace Hotel_1
 
         public void Habilitar_ControlesRUC()
         {
-            txtRUC.Enabled = true;txtRazonSocial.Enabled = true;  txtDireccion.Enabled = true;
-            btnBuscarRuc.Enabled = true; btnGuardarRuc.Enabled = true;
+            txtRUC.Enabled = true;
+            btnBuscarRuc.Enabled = true;
         }
 
         public void Inhabilitar_ControlesRUC()
@@ -103,6 +103,7 @@ namespace Hotel_1
                                   MessageBoxIcon.Question) ==
                                   System.Windows.Forms.DialogResult.Yes)
                 {
+                    txtRazonSocial.Enabled = true; txtDireccion.Enabled = true;
                     txtRazonSocial.Clear(); txtDireccion.Clear();
                     txtRUC.SelectAll(); txtRazonSocial.Focus();
 
@@ -119,28 +120,7 @@ namespace Hotel_1
 
         private void btnBusqueda_Habitacion_Click(object sender, EventArgs e)
         {
-            x = new frmHabitacion_Busqueda();
-
-            //Llamar al formulario como Modal            
-            x.ShowDialog();
-            if (x.HabitacionSelecionada == null)
-            {
-                MessageBox.Show("La búsqueda fue cancelada");
-            }
-            else
-            {
-                txtNombres.Text = x.ClienteSeleccionado.Nombres;
-                txtApellidos.Text = x.ClienteSeleccionado.Apellidos;
-                if (x.ClienteSeleccionado.Sexo == 'M')
-                {
-                    rbMasculino.Checked = true;
-                }
-                else
-                {
-                    rbFemenino.Checked = true;
-                }
-                nudSueldo.Value = Convert.ToDecimal(x.ClienteSeleccionado.Sueldo);
-            }
+            
         }
     }
 }
